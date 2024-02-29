@@ -1,9 +1,22 @@
+import "./Card.css";
 
+const Card = ({data}) => {
 
-const Card = () => {
+  if (!data) {
+    return null;
+  }
+
+  const { nombre, genero, email } = data;
   return (
-    <div>Hola soy una tarjeta</div>
-  )
-}
+    <>
+      <div className="card-container">
+        <h2>Tu banda Favorita</h2>
+        <p>Nombre Banda: {nombre}</p>
+        <p>Genero: {genero} </p>
+        <p>Email: {email} </p>
+      </div>
+    </>
+  );
+};
 
-export default Card
+export default Card;
